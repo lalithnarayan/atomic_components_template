@@ -1,0 +1,33 @@
+/* tooltip styling   */
+
+.tippy-box {
+  @apply rounded-none text-white bg-color-regular;
+}
+
+.tippy-content {
+  @apply p-2;
+}
+
+.tippy-arrow[data-theme~="light"] {
+  @apply text-primary-color-light;
+}
+
+.tippy-box[data-theme~="light"] {
+  @apply rounded-none text-primary-color bg-primary-color-light;
+}
+
+.tippy-box[data-theme~="light"][data-placement^="top"] > .tippy-arrow::before {
+  @apply border-t-primary-color-light;
+}
+.tippy-box[data-theme~="light"][data-placement^="bottom"]
+  > .tippy-arrow::before {
+  @apply border-b-primary-color-light;
+}
+.tippy-box[data-theme~="light"][data-placement^="left"] > .tippy-arrow::before {
+  @apply border-l-primary-color-light;
+}
+/* .tippy-box[data-theme~="light"][data-placement^="right"]
+  > .tippy-arrow::before {
+  @apply border-r-primary-color-light;
+}
+ */

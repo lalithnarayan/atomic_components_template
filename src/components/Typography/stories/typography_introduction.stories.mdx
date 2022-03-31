@@ -1,0 +1,182 @@
+import { Meta } from "@storybook/addon-docs";
+// import GoogleFontsLogo from "../../../../stories/assets/googlefont.svg";
+import Text from "..";
+
+<Meta
+  title="Typography/Introduction"
+  subTitle="Typefaces & Spacings"
+  parameters={{
+    previewTabs: {
+      canvas: { hidden: true },
+    },
+  }}
+/>
+
+<style>{`
+  .subheading {
+    --mediumdark: '#999999';
+    font-weight: 900;
+    font-size: 13px;
+    color: #999;
+    letter-spacing: 6px;
+    line-height: 24px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    margin-top: 40px;
+  }
+
+  .link-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    row-gap: 10px;
+  }
+
+  @media (min-width: 620px) {
+    .link-list {
+      row-gap: 20px;
+      column-gap: 20px;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media all and (-ms-high-contrast:none) {
+  .link-list {
+      display: -ms-grid;
+      -ms-grid-columns: 1fr 1fr;
+      -ms-grid-rows: 1fr 1fr;
+    }
+  }
+
+  .link-item {
+    display: block;
+    padding: 20px 30px 20px 15px;
+    border: 1px solid #00000010;
+    border-radius: 5px;
+    transition: background 150ms ease-out, border 150ms ease-out, transform 150ms ease-out;
+    color: #333333;
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .link-item:hover {
+    border-color: #1EA7FD50;
+    transform: translate3d(0, -3px, 0);
+    box-shadow: rgba(0, 0, 0, 0.08) 0 3px 10px 0;
+  }
+
+  .link-item:active {
+    border-color: #1EA7FD;
+    transform: translate3d(0, 0, 0);
+  }
+
+  .link-item strong {
+    font-weight: 700;
+    display: block;
+    margin-bottom: 2px;
+  }
+
+  .link-item img {
+    height: 40px;
+    margin-right: 15px;
+    flex: none;
+  }
+
+  .link-item span {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .tip {
+    display: inline-block;
+    border-radius: 1em;
+    font-size: 11px;
+    line-height: 12px;
+    font-weight: 700;
+    background: #E7FDD8;
+    color: #66BF3C;
+    padding: 4px 12px;
+    margin-right: 10px;
+    vertical-align: top;
+  }
+
+  .tip-wrapper {
+    font-size: 13px;
+    line-height: 20px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+  .tip-wrapper code {
+    font-size: 12px;
+    display: inline-block;
+  }
+
+  .typography-wrapper {
+    background-color: #F9FAFB;
+  }
+
+  .flex-col {
+    flex-direction: column
+  }
+
+  .maybe-class-name {
+    color: white;
+  }
+
+`}</style>
+
+# Typography
+
+The Coengage Typography System provides a flexible API to apply typography styles explicitly to elements. This gives full control of the visual styling of an element separate from the HTML semantics.
+
+<div className="subheading">Typefaces</div>
+
+Inter is the typeface for user interfaces; it’s a round, humanist
+sans-serif, with incredibly warm appeal. It can be used for both headlines and
+paragraphs alike, as well as for interface elements.
+
+<a
+  className="link-item"
+  href="https://fonts.google.com/specimen/Inter?query=inter"
+  target="_blank"
+>
+  {/* <img src={GoogleFontsLogo} alt="GoogleFontsLogo" /> */}
+  <span>
+    <strong>Font family</strong>
+    Inter
+  </span>
+</a>
+
+<div className="subheading">Weights</div>
+
+Inter is the typeface for user interfaces; it’s a round, humanist
+sans-serif, with incredibly warm appeal. It can be used for both headlines and
+paragraphs alike, as well as for interface elements.
+
+{" "}
+
+<div className="flex flex-col typography-wrapper p-4 space-y-6">
+  <Text block boldness="light">
+    Almost before we knew it, we had left the ground. <code> Light - 300 </code>
+  </Text>
+  <Text>
+    {" "}
+    Almost before we knew it, we had left the ground. <code>Regular - 400</code>
+  </Text>
+  <Text boldness="semibold">
+    Almost before we knew it, we had left the ground.<code> Medium - 500</code>
+  </Text>
+  <Text boldness="semibold">
+    Almost before we knew it, we had left the ground.{" "}
+    <code>Semi Bold - 600</code>
+  </Text>
+  <Text boldness="bold">
+    {" "}
+    Almost before we knew it, we had left the ground. <code>Bold - 700</code>
+  </Text>
+</div>
+
+<div className="subheading">Base Component</div>
+
+All the variations of text used in the app are bulit using the Base Typography component
